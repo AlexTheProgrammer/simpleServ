@@ -1,0 +1,25 @@
+<h1>{{.Title}}
+</h1>
+
+<div>{{printf "%s" .Body}}</div>
+
+<div id = "div-1" ></div>
+
+<img id = "image-0" src ="" alt="image goes here" />
+
+<script>
+var speed = 1000
+
+var div = document.getElementById('div-1')
+var img = document.getElementById('image-0');
+var images = ['run_gof.gif' , 'fix_gof.jpeg']
+
+var counter = 0 
+
+var interval = setInterval(function() {
+	img.src = '/resources/' + images[counter];	
+	counter = (counter + 1)  % images.length
+	div.innerHTML = counter
+}, speed);
+
+ </script>
