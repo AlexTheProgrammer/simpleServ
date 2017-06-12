@@ -17,7 +17,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 }
 
 func loadPage() (*Page, error) {
-	title := "web reporting"
+	title := "Road safety data visualization"
 	filename := "view.txt"
 	body, err := ioutil.ReadFile(filename)
 	if err != nil {

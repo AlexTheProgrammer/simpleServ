@@ -5,21 +5,29 @@
 
 <div id = "div-1" ></div>
 
-<img id = "image-0" src ="" alt="image goes here" />
+<img id = "image-0" src ="https://public.tableau.com/views/SAtrafficstats/Dashboard1?%3Aembed=yes&%3AshowVizHome=no&%3Adisplay_count=y&%3Adisplay_static_image=y&%3AbootstrapWhenNotified=true&publish=yes&%3Atoolbar=no%3A&format=png&%3Asize=800%2C300" alt="" />
 
 <script>
-var speed = 1000
+var speed = 3000
+var dtYear, dtStartYear
+dtYear =  2004
+dtStartYear = 2004
 
-var div = document.getElementById('div-1')
-var img = document.getElementById('image-0');
-var images = ['run_gof.gif' , 'fix_gof.jpeg']
+var div = document.getElementById('div-1');
+var img = document.images[0];
 
-var counter = 0 
+var img_loc = "https://public.tableau.com/views/SAtrafficstats/Dashboard1?%3Aembed=yes&%3AshowVizHome=no&%3Adisplay_count=y&%3Adisplay_static_image=y&%3AbootstrapWhenNotified=true&publish=yes&%3Atoolbar=no%3A&format=png&%3Asize=800%2C300&accident_year=" 
+var dtEndYear = 2017;
+
+
 
 var interval = setInterval(function() {
-	img.src = '/resources/' + images[counter];	
-	counter = (counter + 1)  % images.length
-	div.innerHTML = counter
+	img.src = img_loc + dtYear 
+	if (dtYear < dtEndYear) {
+		dtYear = dtYear + 1 
+	} else {
+		dtYear = dtStartYear
+	}
 }, speed);
 
- </script>
+</script>
